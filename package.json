@@ -1,0 +1,15 @@
+{
+  "name": "npm-kmeans",
+  "version": "1.0.0",
+  "description": "",
+  "main": "k-means.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "k-means",
+    "clustering"
+  ],
+  "author": "Gustaf Brostedt",
+  "license": "MIT"
+}
