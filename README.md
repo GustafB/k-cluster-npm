@@ -1,7 +1,7 @@
-Number Formatter
+K-Means Cluster
 =========
 
-A small library that adds commas to numbers
+Implementation of the k-means cluster algorithm.
 
 ## Installation
 
@@ -24,13 +24,15 @@ A small library that adds commas to numbers
   clusters should equal: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
 
 ## Inputs
-  * Data (vectors): nXm array (n points per m columns)
-  * k (optional, defaults to 4): number of clusters to be created
+  * Data (vectors): nXm array (n points per m columns.)
+  * k (optional, defaults to 4): number of clusters to be created.
   * distance (optional): custom distance function, computing the distance between two arrays.
     `distance = (a, b) => a - b`
 
 ## Outputs
-  * Clusters: k
+  * Clusters: array of k subarrays, each representing the vector of a cluster
+  * Assignments: array of k arrays, each containing the indices of the original
+    data set vectors that have been assigned to it.
 
 ## Tests
 
