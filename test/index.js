@@ -88,6 +88,7 @@ describe('kMeans', () => {
 
       const { clusters, assignments } = kMeans(data, 3);
       const sorted = clusters.sort((a, b) => a[0] - b[0]);
+      
       expect(assignments).to.exist;
       expect(clusters).to.exist;
       expect(clusters).to.have.length(3);
