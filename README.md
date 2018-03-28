@@ -21,7 +21,7 @@ Implementation of the k-means cluster algorithm.
   
   
   assignments should equal: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
-  clusters should equal: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+  clusters should equal: [[1], [2], [3]]
 
 ## Inputs
   * Data (vectors): nXm array (n points per m columns.)
