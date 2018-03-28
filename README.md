@@ -31,7 +31,7 @@ Implementation of the k-means cluster algorithm.
 
 ## Outputs
   * Clusters: array of k subarrays, each representing the vector of a cluster
-  * Assignments: array of k arrays, each containing the indices of the original
+  * Assignments: array of k subarrays, each containing the indices of the original
     data set vectors that have been assigned to it.
 
 ## Tests
