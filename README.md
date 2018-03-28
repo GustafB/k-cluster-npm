@@ -9,7 +9,7 @@ Implementation of the k-means clustering algorithm.
 
 ## Usage
 
-    const kMeans = require('k-cluster-npm');
+    const kMeans = require('npm-kmeans');
 
     const data = [
       [1, 1, 1],
