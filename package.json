@@ -1,6 +1,6 @@
 {
   "name": "npm-kmeans",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Implementation of the k-means clustering algorithm",
   "main": "k-means.js",
   "scripts": {
@@ -22,6 +22,9 @@
   },
   "repository": {
     "type": "git",
+    "url": "https://github.com/GustafB/k-cluster-npm"
+  },
+  "website": {
     "url": "https://github.com/GustafB/k-cluster-npm"
   }
 }

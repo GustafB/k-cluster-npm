@@ -1,7 +1,7 @@
 K-Means Cluster
 =========
 
-Implementation of the k-means cluster algorithm.
+Implementation of the k-means clustering algorithm.
 
 ## Installation
 
@@ -20,8 +20,8 @@ Implementation of the k-means cluster algorithm.
     const { clusters, assignments } = kMeans(data, 3);
   
   
-  assignments should equal: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
-  clusters should equal: [[1], [2], [3]]
+  assignments should equal: [[1], [2], [3]]
+  clusters should equal: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
 
 ## Inputs
   * Data (vectors): nXm array (n points per m columns.)
@@ -40,4 +40,4 @@ Implementation of the k-means cluster algorithm.
 
 ## Contributing
 
-In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
+In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality.
