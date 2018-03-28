@@ -4,7 +4,7 @@
   "description": "Implementation of the k-means clustering algorithm",
   "main": "k-means.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter spec"
   },
   "keywords": [
     "k-means",
