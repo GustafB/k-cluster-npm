@@ -5,7 +5,7 @@ Implementation of the k-means cluster algorithm.
 
 ## Installation
 
-  `npm install @GustafB/k-cluster-npm`
+  `npm i npm-kmeans`
 
 ## Usage
 
