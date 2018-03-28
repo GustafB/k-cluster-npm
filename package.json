@@ -1,6 +1,6 @@
 {
   "name": "npm-kmeans",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Implementation of the k-means clustering algorithm",
   "main": "k-means.js",
   "scripts": {
