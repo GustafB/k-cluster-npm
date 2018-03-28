@@ -4,7 +4,8 @@
   "description": "Implementation of the k-means clustering algorithm",
   "main": "k-means.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "keywords": [
     "k-means",
@@ -26,5 +27,9 @@
   },
   "website": {
     "url": "https://github.com/GustafB/k-cluster-npm"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5"
   }
 }

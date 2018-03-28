@@ -23,10 +23,38 @@ const data = [
 ];
 
 const { should, expect } = require('chai');
-const { pearsonCorrelation } = require('../lib/helpers.js');
+const { pearsonCorrelation, euclideanDistance, sumSquare, sumArray } = require('../lib/helpers.js');
 const kMeans = require('../lib/k-means.js');
 
 describe('kMeans', () => {
+  describe('helpers', () => {
+    it('should compute the euclidean distance between two arrays', done => {
+      const distance1 = euclideanDistance([1,2,3,4], [1,2,3,4]);
+      const distance2 = euclideanDistance([2,-1], [-2, 2]);
+
+      expect(distance1).to.exist;
+      expect(distance2).to.exist;
+      expect(distance1).to.equal(0);
+      expect(distance2).to.equal(5);
+      done();
+    });
+
+    it('should compute the sum of squares', done => {
+      const sumOfSquares1 = sumSquare([5,5]);
+      const sumOfSquares2 = sumSquare([2,2]);
+      const sumOfSquares3 = sumSquare([1,1]);
+
+      expect(sumOfSquares1).to.exist;
+      expect(sumOfSquares2).to.exist;
+      expect(sumOfSquares3).to.exist;
+      expect(sumOfSquares1).to.equal(50);
+      expect(sumOfSquares2).to.equal(8);
+      expect(sumOfSquares3).to.equal(2);
+      done();
+    });
+
+  });
+
   describe('results', () => {
     it('should return a result (Array)', done => {
       const { assignments, clusters } = kMeans(data);
@@ -88,7 +116,7 @@ describe('kMeans', () => {
 
       const { clusters, assignments } = kMeans(data, 3);
       const sorted = clusters.sort((a, b) => a[0] - b[0]);
-      
+
       expect(assignments).to.exist;
       expect(clusters).to.exist;
       expect(clusters).to.have.length(3);
