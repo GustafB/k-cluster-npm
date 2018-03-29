@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/k-means.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">lib/</a> k-means.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>58/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>15/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>57/59</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">362×</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">425×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">425×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">425×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">2072×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">25325×</span>
+<span class="cline-any cline-yes">6207×</span>
+<span class="cline-any cline-yes">6207×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">151×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">147×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">783×</span>
+<span class="cline-any cline-yes">1533×</span>
+<span class="cline-any cline-yes">1533×</span>
+<span class="cline-any cline-yes">8396×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1533×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">147×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">141×</span>
+<span class="cline-any cline-yes">141×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+/*
+ * kmeans-npm
+ * Copyright(c) 2018 GustafB &lt;gustaf.brostedt@gmail.com&gt;
+ * MIT Licensed
+ */
+&nbsp;
+/*
+Implementation of the k-means clustering algorithm. The function takes as its
+input a two-dimensional array, represented as N vectors, k, representing the 
+number of clusters to be created, and a distance function. Both of the latter
+are optional and will default to 4 and Euclidean distance respectively.
+&nbsp;
+The function will output:
+  - centroids: an Array of k vectors, each representing a centroid of each cluster
+  - assignments: An array of size k, where each subarray contains the 
+    indices of the vectors assigned to it
+*/
+&nbsp;
+const { pearsonCorrelation, euclideanDistance, createFillerArray, normalizeData } = require('./helpers.js');
+const _ = require('lodash');
+&nbsp;
+&nbsp;
+/**
+ * Compute edges of each vector
+ *
+ * @param {Array} data
+ * @api private
+ */
+&nbsp;
+const getEdges = (data) =&gt; {
+  const edges = [];
+  data.forEach(vector =&gt; {
+    vector.forEach((point, j) =&gt; {
+      if (typeof point !== 'number') {
+        throw (new Error('Vectors may only contain numeric values'))
+      }
+      if (!edges[j]) {
+        edges[j] = {min: Infinity, max: -Infinity};
+      }
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (point[j] &lt; edges[j].min) {
+<span class="cstat-no" title="statement not covered" >        edges[j].min = point[j];</span>
+      }
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (point[j] &gt; edges[j].max) {
+<span class="cstat-no" title="statement not covered" >        edges[j].max = point[j];</span>
+      }
+    })
+  })
+  return edges;
+}
+&nbsp;
+&nbsp;
+/**
+ * Randomly select beginning centroids
+ *
+ * @param {Array} points
+ * @param {Number} k
+ * @api private
+ */
+&nbsp;
+const selectRandomCentroids = (points, k) =&gt; {
+  let centroids = points.slice(0);
+  centroids = centroids.sort(() =&gt; (
+    (Math.round(Math.random()) - 0.5)
+  ));
+  return centroids.slice(0, k);
+}
+&nbsp;
+&nbsp;
+/**
+ * Assign vector to closest cluster
+ *
+ * @param {Array} vectors
+ * @param {Array} clusters
+ * @param {Number} k
+ * @param {Function} dist
+ * @api private
+ */
+&nbsp;
+const assignToCluster = (vectors, clusters, k, dist = euclideanDistance) =&gt; {
+  const assignments = createFillerArray(k, [])
+  vectors.forEach((vector, i) =&gt; {
+    const distances = clusters.map((c) =&gt; dist(c, vector));
+    const closest = distances.indexOf(Math.min(...distances));
+    assignments[closest].push(i);
+  })
+  return assignments;
+}
+&nbsp;
+/**
+ * Recalculates the mean of each cluster
+ *
+ * @param {Array} data
+ * @param {Array} clusters
+ * @param {Number} k
+ * @param {Function} distance
+ * @api private
+ */
+const revertMeans = (data, clusters, k, distance) =&gt; {
+  const assignments = assignToCluster(data, clusters, k, distance);
+  const original = clusters.slice(0).toString();
+  clusters.forEach((cluster, i) =&gt; {
+    cluster.forEach((_, j) =&gt; {
+      let sum = 0;
+      assignments[i].forEach((_, t) =&gt; {
+        sum += data[assignments[i][t]][j];
+        // sum += assignments[i][t][j];
+      })
+      clusters[i][j] = sum / assignments[i].length || <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+    })
+  })
+  return [clusters.toString() === original, clusters, assignments];
+}
+&nbsp;
+/**
+ * Recursively recalculate means until
+ * cluster centers are found
+ *
+ * @param {Array} data
+ * @param {Number} k
+ * @param {Function} distance
+ * @api private
+ */
+const kCluster = (data, k, distance) =&gt; {
+  let edges = getEdges(data, k);
+  let centroids = selectRandomCentroids(data, k);
+  let iterations = 0;
+  const moveCentroids = () =&gt; {
+    let means = revertMeans(data, centroids, k, distance);
+    if(!means[0]) {
+      iterations++
+      return moveCentroids();
+    } else {
+      return means[1];
+    }
+  }
+  return moveCentroids()
+}
+&nbsp;
+/**
+ * Wrapper function to produce output
+ *
+ * @param {Array} data
+ * @param {Number} k
+ * @param {Function} distance
+ * @api private
+ */
+&nbsp;
+const kMeans = (data, k = 4, distance = euclideanDistance) =&gt; {
+  if (!data) {
+    throw (new Error('Please provide arguments: data, k (optional), distance function (optional)'))
+  }
+  if (!_.isArray(data)) {
+    throw (new Error('The data must be provided through a multi-dimensoinal array'));
+  }
+  if (k &gt; data.length) {
+    throw (new Error('The number of vectors must be greater than k'));
+  }
+  const clusters = kCluster(data, k);
+  const assignments = assignToCluster(data, clusters, k, distance);
+  return {
+    clusters, assignments
+  }
+}
+&nbsp;
+module.exports = kMeans</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 28 2018 23:44:58 GMT-0400 (EDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

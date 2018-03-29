@@ -27,8 +27,8 @@ const { pearsonCorrelation, euclideanDistance, sumSquare, sumArray } = require('
 const kMeans = require('../lib/k-means.js');
 
 describe('kMeans', () => {
-  describe('helpers', () => {
-    it('should compute the euclidean distance between two arrays', done => {
+  describe('Helper Functions', () => {
+    it('should compute the distance between two arrays', done => {
       const distance1 = euclideanDistance([1,2,3,4], [1,2,3,4]);
       const distance2 = euclideanDistance([2,-1], [-2, 2]);
 
@@ -39,19 +39,39 @@ describe('kMeans', () => {
       done();
     });
 
+    it('should compute the sum of an array', done => {
+      const sum1 = sumArray([1,2,3]);
+      const sum2 = sumArray([-1,-2,-3]);
+      const noInput = sumArray();
+
+      expect(sum1).to.exist;
+      expect(sum2).to.exist;
+      expect(noInput).to.exist;
+
+      expect(sum1).to.equal(6);
+      expect(sum2).to.equal(-6);
+      expect(noInput).to.equal(0);
+      done();
+    })
+
     it('should compute the sum of squares', done => {
       const sumOfSquares1 = sumSquare([5,5]);
       const sumOfSquares2 = sumSquare([2,2]);
       const sumOfSquares3 = sumSquare([1,1]);
+      const noInput = sumSquare();
 
+      expect(noInput).to.exist;
       expect(sumOfSquares1).to.exist;
       expect(sumOfSquares2).to.exist;
       expect(sumOfSquares3).to.exist;
+
+      expect(noInput).to.equal(0);
       expect(sumOfSquares1).to.equal(50);
       expect(sumOfSquares2).to.equal(8);
       expect(sumOfSquares3).to.equal(2);
       done();
     });
+
 
   });
 
@@ -132,4 +152,42 @@ describe('kMeans', () => {
     });
   });
 
-})
+  describe('Error Handling', () => {
+    it('should throw error when vectors are of different lengths', done => {
+      const error = 'Vectors must have the same length';
+      const badInput = () => kMeans([[1,2,3], [1,2]], 1);
+      expect(badInput).to.throw(error);
+      done();
+    });
+
+    it('should throw error when k < number of vectors', done => {
+      const error = 'The number of vectors must be greater than k';
+      const badInput = () => kMeans([[1,2,3], [1,2]]);
+      expect(badInput).to.throw(error);
+      done();
+    });
+
+    it('should throw error when data is not an array', done => {
+      const error = 'The data must be provided through a multi-dimensoinal array';
+      const badInput = () => kMeans({});
+      expect(badInput).to.throw(error);
+      done();
+    });
+
+    it('should throw error when no arguments are provided', done => {
+      const error = 'Please provide arguments: data, k (optional), distance function (optional)';
+      const badInput = () => kMeans();
+      expect(badInput).to.throw(error);
+      done();
+    });
+
+    it('should throw error when none numeric values are entered', done => {
+      const error = 'Vectors may only contain numeric values';
+      const badInput = () => kMeans([[1,2,'a'], [1,1,1]], 1);
+      expect(badInput).to.throw(error);
+      done();
+    });    
+
+  })
+
+});
