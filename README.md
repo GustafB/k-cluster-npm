@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/GustafB/k-cluster-npm.svg?branch=master)](https://travis-ci.org/GustafB/k-cluster-npm)
+[![Coverage Status](https://coveralls.io/repos/github/GustafB/k-cluster-npm/badge.svg?branch=master)](https://coveralls.io/github/GustafB/k-cluster-npm?branch=master)
+
 K-Means Cluster
 =========
 
